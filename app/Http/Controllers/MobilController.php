@@ -103,7 +103,7 @@ class MobilController extends Controller
         $mobil->nomor_polisi = $request->nomor_polisi;
         $mobil->warna_mobil = $request->warna_mobil;
         $mobil->tahun_pembuatan = $request->tahun_pembuatan;
-        $mobil->status = $request->merge(['slug'=> str_slug($request->status),'status'=>'tersedia']);
+        $mobil->status = $request->status;
         $mobil->harga_sewa = $request->harga_sewa;
         $mobil->denda = $request->denda;
         $mobil->save();
