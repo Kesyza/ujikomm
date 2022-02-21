@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MerekController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\SopirController;
+use App\Http\Controllers\MobilController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +27,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
-    Route::get('/', function () {
-        return 'halaman admin';
-    });
-
-    Route::get('/profile', function () {
-        return 'halaman profile admin';
-    });
+    Route::resource('/merek', MerekController::class);
+    Route::resource('/pelanggan', PelangganController::class);
+    Route::resource('/sopir', SopirController::class);
+    Route::resource('/mobil', MobilController::class);
+    Route::resource('/transaksi', TransaksiController::class);
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth', 'role:user']], function(){

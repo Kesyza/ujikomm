@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Rental K.15.A</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -246,78 +246,65 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'Menu Utama'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Dashboard',
+            'url'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Menu'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Manajemen Data',
+            'icon'    => 'fas fa-file',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Data Mobil',
+                    'icon'    => 'fas fa-fw fa-car',
+                    'url'  => 'admin/mobil',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Data Merek',
+                    'icon'    => 'fas fa-life-ring',
+                    'url'  => 'admin/merek',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Data Sopir',
+                    'icon'    => 'fas fa-tachometer-alt',
+                    'url'  => 'admin/sopir',
                 ],
             ],
         ],
-        ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Data Pelanggan',
+            'url'  => 'admin/pelanggan',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Sewa Offline',
+            'icon' => 'far fa-credit-card',
+            'submenu' => [
+                [
+                    'text' => 'Sewa',
+                    'icon'    => 'fas fa-edit',
+                    'url'  => 'admin/transaksi/create',
+                ],
+                [
+                    'text' => 'List Sewa',
+                    'icon'    => 'fas fa-edit',
+                    'url'  => 'admin/transaksi',
+                ],
+                [
+                    'text' => 'Riwayat Sewa',
+                    'icon'    => 'fas fa-book',
+                    'url'  => '',
+                ],
+            ],
         ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // [
+        //     'text' => 'Pengaturan',
+        //     'url'  => '',
+        //     'icon' => 'fas fa-fw fa-cog',
+        // ],
     ],
 
     /*

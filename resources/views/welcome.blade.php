@@ -67,9 +67,6 @@
 		</div>
 	</nav>
 </header>
-	
-
-
 
 <!-- Slider Start -->
 <section class="banner">
