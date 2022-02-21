@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Manajemen Data Merek
+<center><h3>MANAJEMEN DATA MEREK</h3></center>
 
 @endsection
 
@@ -15,17 +15,21 @@ Manajemen Data Merek
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Merek
+                    <h5>DATA MEREK
                     <a href="{{route('merek.create')}}" class="btn btn-sm btn-outline-primary float-right" data-toggle="tooltip" title="Tambah Merek"><i class="fas fa-plus"></i></a>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="merek">
+                            <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Merek Mobil</th>
                                 <th>Aksi</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @php
                                 $no=1;
                             @endphp
@@ -44,6 +48,7 @@ Manajemen Data Merek
                                     </td>
                                 </tr>
                                 @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -56,11 +61,19 @@ Manajemen Data Merek
 
 @section('css')
 
+<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
+
 @endsection
 
 @section('js')
 
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#merek').DataTable();
+        });
+    </script>
 
 @endsection

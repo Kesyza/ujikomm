@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Data Mobil
+<center><h3>MANAJEMEN DATA MOBIL</h3></center>
 
 @endsection
 
@@ -15,12 +15,14 @@ Data Mobil
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Mobil
+                    <h5>DATA MOBIL
                     <a href="{{route('mobil.create')}}" class="btn btn-sm btn-outline-primary float-right" data-toggle="tooltip" title="Tambah Mobil"><i class="fas fa-plus"></i></a>
+                    </h5>               
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="mobil">
+                            <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Mobil</th>
@@ -31,6 +33,8 @@ Data Mobil
                                 {{-- <th>Gambar</th> --}}
                                 <th>Aksi</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @php
                                 $no=1;
                             @endphp
@@ -66,11 +70,19 @@ Data Mobil
 
 @section('css')
 
+<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
+
 @endsection
 
 @section('js')
 
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mobil').DataTable();
+        });
+    </script>
 
 @endsection

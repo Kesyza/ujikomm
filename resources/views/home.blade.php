@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-<center><h1>SELAMAT DATANG DI HALAMAN ADMIN SEWA MOBIL K.15.A</h1></center>
+<center><h1><b>SELAMAT DATANG DI HALAMAN ADMIN SEWA MOBIL K.15.A</b></h1></center>
 
 @stop
 

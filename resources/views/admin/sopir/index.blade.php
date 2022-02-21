@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Manajemen Data Sopir
+<center><h3>MANAJEMEN DATA SOPIR</h3></center>
 
 @endsection
 
@@ -15,12 +15,14 @@ Manajemen Data Sopir
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Sopir
+                    <h5>DATA SOPIR
                     <a href="{{route('sopir.create')}}" class="btn btn-sm btn-outline-primary float-right" data-toggle="tooltip" title="Tambah Merek"><i class="fas fa-plus"></i></a>
+                    </h5>               
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="sopir">
+                            <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Sopir</th>
@@ -29,6 +31,8 @@ Manajemen Data Sopir
                                 <th>Tarif Sopir</th>
                                 <th>Aksi</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @php
                                 $no=1;
                             @endphp
@@ -37,7 +41,7 @@ Manajemen Data Sopir
                                     <td>{{$no++}}</td>
                                     <td>{{$data->nama_sopir}}</td>
                                     <td>{{$data->nomor_hp}}</td>
-                                    <td><img src="{{ $data->image() }}" alt="" style="width:150px; height:150px;" alt=""></td>
+                                    <td><img src="{{ $data->image() }}" alt="" style="width:110px; height:150px;" alt=""></td>
                                     <td>Rp. {{ number_format($data->tarif, 0, ',', '.') }}</td>
                                     <td>
                                         <form action="{{route('sopir.destroy',$data->id)}}" method="post">
@@ -49,6 +53,7 @@ Manajemen Data Sopir
                                     </td>
                                 </tr>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -61,11 +66,19 @@ Manajemen Data Sopir
 
 @section('css')
 
+<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
+
 @endsection
 
 @section('js')
 
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sopir').DataTable();
+        });
+    </script>
 
 @endsection

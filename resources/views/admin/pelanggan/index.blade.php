@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Manajemen Data Pelanggan
+<center><h3>MANAJEMEN DATA PELANGGAN</h3></center>
 
 @endsection
 
@@ -15,12 +15,14 @@ Manajemen Data Pelanggan
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Pelanggan
+                    <h5>DATA PELANGGAN
                     <a href="{{route('pelanggan.create')}}" class="btn btn-sm btn-outline-primary float-right" data-toggle="tooltip" title="Tambah Pelanggan"><i class="fas fa-plus"></i></a>
+                    </h5>                
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="pelanggan">
+                            <thead>
                             <tr>
                                 <th>No</th>
                                 <th>NIK</th>
@@ -28,6 +30,8 @@ Manajemen Data Pelanggan
                                 <th>Nomor Telepon</th>
                                 <th>Aksi</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @php
                                 $no=1;
                             @endphp
@@ -48,6 +52,7 @@ Manajemen Data Pelanggan
                                     </td>
                                 </tr>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -60,11 +65,19 @@ Manajemen Data Pelanggan
 
 @section('css')
 
+<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
+
 @endsection
 
 @section('js')
 
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#pelanggan').DataTable();
+        });
+    </script>
 
 @endsection
