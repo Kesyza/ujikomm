@@ -94,7 +94,7 @@
 				<div class="feature-block d-lg-flex">
 					<div class="feature-item mb-5 mb-lg-0">
 						<div class="feature-icon mb-4">
-							<i class="icofont-surgeon-alt"></i>
+							<i class="icofont-user-male"></i>
 						</div>
 						<span>Melayani</span>
 						<h4 class="mb-3">24 jam</h4>
@@ -134,30 +134,30 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-doctor"></i>
-						<span class="h3">58</span>k
+						<i class="icofont-car-alt-4"></i>
+						<span class="h3">{{ DB::table('mobils')->count() }}</span>
 						<p>Jumlah Mobil</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-flag"></i>
-						<span class="h3">700</span>+
+						<i class="icofont-people"></i>
+						<span class="h3">{{ DB::table('pelanggans')->count() }}</span>
 						<p>Jumlah Pelanggan</p>
 					</div>
 				</div>
 				
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-badge"></i>
-						<span class="h3">40</span>+
+						<i class="icofont-brand-mercedes"></i>
+						<span class="h3">{{ DB::table('mereks')->count() }}</span>
 						<p>Jumlah Merek Mobil</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="counter-stat">
-						<i class="icofont-globe"></i>
-						<span class="h3">20</span>
+						<i class="icofont-user-male"></i>
+						<span class="h3">{{ DB::table('sopirs')->count() }}</span>
 						<p>Jumlah Sopir</p>
 					</div>
 				</div>
