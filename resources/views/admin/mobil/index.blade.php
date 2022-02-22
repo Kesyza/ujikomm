@@ -30,7 +30,7 @@
                                 <th>Tahun Pembuatan</th>
                                 <th>Harga Sewa</th>
                                 <th>Status Mobil</th>
-                                {{-- <th>Gambar</th> --}}
+                                <th>Gambar</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -46,7 +46,7 @@
                                     <td>{{$data->tahun_pembuatan}}</td>
                                     <td>Rp. {{ number_format($data->harga_sewa, 0, ',', '.') }}</td>
                                     <td>{{$data->status}}</td>
-                                    {{-- <td><img src="{{$data->image()}}" alt="" style="width:160px; height:100px;" alt="Gambar"></td> --}}
+                                    <td><img src="{{$data->image()}}" alt="" style="width:130px; height:100px;" alt="Gambar"></td>
                                     <td>
                                         <form action="{{route('mobil.destroy',$data->id)}}" method="post">
                                         @method('delete')

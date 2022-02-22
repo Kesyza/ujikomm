@@ -30,7 +30,7 @@ Tambah Data Mobil
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col">
+                            <div class="col">
                                 <div class="form-group">
                                     <label for="">Masukan Status Mobil</label>
                                     <input type="text" name="status" class="form-control @error('status') is-invalid @enderror">
@@ -38,7 +38,7 @@ Tambah Data Mobil
                                         <span class="invalid-feedback" role="alert"></span>
                                         <strong>{{ $message }}</strong>
                                     @enderror
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         <div class="row">
