@@ -19,7 +19,7 @@ use App\Http\Controllers\TransaksiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.index');
 });
 
 Auth::routes();
@@ -42,4 +42,20 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth', 'role:user']], functi
     Route::get('/profile', function () {
         return 'halaman profile user';
     });
+});
+
+Route::get('index', function () {
+    return view('user.index');
+});
+
+Route::get('tentang', function () {
+    return view('user.tentang');
+});
+
+Route::get('lihat', function () {
+    return view('user.lihat');
+});
+
+Route::get('sewa', function () {
+    return view('user.sewa');
 });
