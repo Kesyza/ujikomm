@@ -293,11 +293,11 @@ return [
                     'icon'    => 'fas fa-edit',
                     'url'  => 'admin/transaksi',
                 ],
-                [
-                    'text' => 'Riwayat Sewa',
-                    'icon'    => 'fas fa-book',
-                    'url'  => '',
-                ],
+                // [
+                //     'text' => 'Riwayat Sewa',
+                //     'icon'    => 'fas fa-book',
+                //     'url'  => '',
+                // ],
             ],
         ],
         // [

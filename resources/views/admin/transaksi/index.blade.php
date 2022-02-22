@@ -4,9 +4,9 @@
 
 @section('content_header')
 
-Manajemen Data Transaksi
+<center><h3>MANAJEMEN DATA TRANSAKSI</h3></center>
 
-@stop
+@endsection
 
 @section('content')
 
@@ -15,12 +15,14 @@ Manajemen Data Transaksi
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Transaksi
+                    <h5>DATA TRANSAKSI
                     {{-- <a href="{{route('transaksi.create')}}" class="btn btn-sm btn-outline-primary float-right" data-toggle="tooltip" title="Tambah Transaksi"><i class="fas fa-plus"></i></a> --}}
+                    </h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="transaksi">
+                            <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nota</th>
@@ -33,6 +35,8 @@ Manajemen Data Transaksi
                                 <th>Status Sewa</th>
                                 <th>Aksi</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @php
                                 $no=1;
                             @endphp
@@ -57,6 +61,7 @@ Manajemen Data Transaksi
                                     </td>
                                 </tr>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -65,12 +70,21 @@ Manajemen Data Transaksi
     </div>
 </div>
 
-@stop
+@endsection
 
 @section('css')
 
-@stop
+<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
+
+@endsection
 
 @section('js')
 
-@stop
+<script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#transaksi').DataTable();
+        });
+    </script>
+
+@endsection
