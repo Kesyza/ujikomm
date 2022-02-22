@@ -56,7 +56,7 @@
                                         @method('delete')
                                         @csrf
                                         {{-- <a href="{{route('transaksi.edit',$data->id)}}" class="btn btn-outline-info" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a> --}}
-                                        <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip" title="Hapus" onclick="return confirm('Apakah anda yakin menghapus')"><i class="fas fa-window-close">
+                                        <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip" title="Hapus"><i class="fas fa-window-close">
                                         </form>
                                     </td>
                                 </tr>
@@ -80,7 +80,9 @@
 
 @section('js')
 
-<script src="{{ asset('dataTables/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
+    <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('dataTables/datatables.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#transaksi').DataTable();

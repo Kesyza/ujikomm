@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Tambah Data Sopir
+<center><h3>TAMBAH DATA SOPIR</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Tambah Data Sopir
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Sopir</div>
+                <div class="card-header"><h5>DATA SOPIR</h5></div>
                 <div class="card-body">
                     <form action="{{route('sopir.store')}}" method="post" enctype="multipart/form-data">
                         @csrf

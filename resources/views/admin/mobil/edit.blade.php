@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Edit Data Mobil
+<center><h3>EDIT DATA MOBIL</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Edit Data Mobil
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Mobil</div>
+                <div class="card-header"><h5>DATA MOBIL</h5></div>
                     <div class="card-body">
                         <form action="{{route('mobil.update',$mobil->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -26,16 +26,6 @@ Edit Data Mobil
                                         <br>
                                         <img src="{{ $mobil->image() }}" height="75" style="padding:10px;" />
                                         <input type="file" name="gambar" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="">Masukan Status Mobil</label>
-                                        <input type="text" name="status" value="{{$mobil->status}}" class="form-control @error('status') is-invalid @enderror">
-                                        @error('status')
-                                            <span class="invalid-feedback" role="alert"></span>
-                                            <strong>{{ $message }}</strong>
-                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -110,6 +100,16 @@ Edit Data Mobil
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Masukan Status Mobil</label>
+                                        <input type="text" name="status" value="{{$mobil->status}}" class="form-control @error('status') is-invalid @enderror">
+                                        @error('status')
+                                            <span class="invalid-feedback" role="alert"></span>
+                                            <strong>{{ $message }}</strong>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="">Edit Warna Mobil</label>

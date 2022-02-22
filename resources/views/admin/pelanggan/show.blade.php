@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Detail Data Pelanggan
+<center><h3>DETAIL DATA PELANGGAN</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Detail Data Pelanggan
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pelanggan</div>
+                <div class="card-header"><h5>DATA PELANGGAN</h5></div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
@@ -59,7 +59,7 @@ Detail Data Pelanggan
                         </div>
                     </div>
                     <div class="form-group">
-                        <a href="{{url('/admin/pelanggan')}}" class="btn btn-block btn-outline-primary">Kembali Ke Tampilan Awal</a>
+                        <a href="{{url('/admin/pelanggan')}}" class="btn btn-block btn-outline-primary">Kembali</a>
                     </div>
                 </div>
             </div>

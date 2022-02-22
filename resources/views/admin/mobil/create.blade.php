@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Tambah Data Mobil
+<center><h3>TAMBAH DATA MOBIL</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Tambah Data Mobil
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Mobil</div>
+                <div class="card-header"><h5>DATA MOBIL</h5></div>
                 <div class="card-body">
                     <form action="{{route('mobil.store')}}" method="post" enctype="multipart/form-data">
                         @csrf

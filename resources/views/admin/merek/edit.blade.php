@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Edit Data Merek
+<center><h3>EDIT DATA MEREK</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Edit Data Merek
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Merek</div>
+                <div class="card-header"><h5>DATA MEREK</h5></div>
                     <div class="card-body">
                         <form action="{{route('merek.update',$merek->id)}}" method="post">
                             @csrf

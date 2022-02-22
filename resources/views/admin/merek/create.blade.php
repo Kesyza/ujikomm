@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Tambah Data Merek
+<center><h3>TAMBAH DATA MEREK</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Tambah Data Merek
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Merek</div>
+                <div class="card-header"><h5>DATA MEREK</h5></div>
                 <div class="card-body">
                     <form action="{{route('merek.store')}}" method="post">
                         @csrf

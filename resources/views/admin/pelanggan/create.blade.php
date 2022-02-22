@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Tambah Data Pelanggan
+<center><h3>TAMBAH DATA PELANGGAN</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Tambah Data Pelanggan
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pelanggan</div>
+                <div class="card-header"><h5>DATA PELANGGAN</h5></div>
                 <div class="card-body">
                     <form action="{{route('pelanggan.store')}}" method="post">
                         @csrf

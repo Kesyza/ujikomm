@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Edit Data Pelanggan
+<center><h3>EDIT DATA PELANGGAN</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Edit Data Pelanggan
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Pelanggan</div>
+                <div class="card-header"><h5>DATA PELANGGAN</h5></div>
                     <div class="card-body">
                         <form action="{{route('pelanggan.update',$pelanggan->id)}}" method="post">
                             @csrf
@@ -91,6 +91,7 @@ Edit Data Pelanggan
                             <div class="form-group">
                                 <button type="reset" class="btn btn-outline-warning">Reset</button>
                                 <button type="submit" class="btn btn-outline-info">Simpan</button>
+                                {{-- <a href="{{url('/admin/pelanggan')}}" class="btn btn-outline-primary">Kembali</a> --}}
                             </div>
                         </form>
                 </div>

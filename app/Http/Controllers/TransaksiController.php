@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
+use Validator;
 use Carbon\Carbon;
 use App\Models\Sopir;
 use App\Models\Mobil;
@@ -69,6 +71,7 @@ class TransaksiController extends Controller
         $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif;
         $transaksi->status_sewa = $request->status_sewa;
         $transaksi->save();
+        Alert::success('Bagus...', 'Data berhasil ditambah');
         return redirect()->route('transaksi.index');
     }
 
@@ -114,8 +117,14 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        $transaksi = Transaksi::findOrFail($id);
-        $transaksi->delete();
+        // $transaksi = Transaksi::findOrFail($id);
+        // $transaksi->delete();
+        // return redirect()->route('transaksi.index');
+
+        if (!Transaksi::destroy($id)) {
+            return redirect()->back();
+        }
+        Alert::success('Sip...', 'Data berhasil dihapus');
         return redirect()->route('transaksi.index');
     }
 }

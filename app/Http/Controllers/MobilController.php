@@ -55,7 +55,7 @@ class MobilController extends Controller
 
         $rules = [
             'nama_mobil' => 'required|max:255|unique:mobils',
-            'gambar' => 'required|image|max:2048|unique:mobils',
+            // 'gambar' => 'required|image|max:2048|unique:mobils',
             'id_merek' => 'required',
             'nomor_polisi' => 'required|unique:mobils',
             'warna_mobil' => 'required',
@@ -69,9 +69,9 @@ class MobilController extends Controller
             'nama_mobil.required' => 'Nama mobil harus diisi',
             'nama_mobil.unique' => 'Nama mobil sudah digunakan',
             'nama_mobil.max' => 'Nama mobil maksimal 255 karakter',
-            'gambar.required' => 'Gambar harus diisi',
-            'gambar.image' => 'Gambar harus berupa file foto',
-            'gambar.unique' => 'Gambar sudah digunakan',
+            // 'gambar.required' => 'Gambar harus diisi',
+            // 'gambar.image' => 'Gambar harus berupa file foto',
+            // 'gambar.unique' => 'Gambar sudah digunakan',
             'id_merek.required' => 'Nama merek harus diisi',
             'nomor_polisi.required' => 'Nomor polisi harus diisi',
             'nomor_polisi.unique' => 'Nomor polisi sudah digunakan',

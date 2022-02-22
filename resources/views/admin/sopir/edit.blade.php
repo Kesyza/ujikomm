@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Edit Data Sopir
+<center><h3>EDIT DATA SOPIR</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Edit Data Sopir
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Sopir</div>
+                <div class="card-header"><h5>DATA SOPIR</h5></div>
                     <div class="card-body">
                         <form action="{{route('sopir.update',$sopir->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
