@@ -112,67 +112,82 @@
            <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
             <h2 class="mb-2 title-color">Lengkapi data berikut!</h2>
             <p class="mb-4">Hati-hati dalam mengisi data terutama saat mengisi alamat dan nomor telepon. Jikalau ada kesalahan bisa langsung hubungi pada nomor yang sudah tertera.</p>
-               <form id="#" class="appoinment-form" method="post" action="#">
-                    <div class="row">
-                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>Choose Department</option>
-                                  <option>Software Design</option>
-                                  <option>Development cycle</option>
-                                  <option>Software Development</option>
-                                  <option>Maintenance</option>
-                                  <option>Process Query</option>
-                                  <option>Cost and Duration</option>
-                                  <option>Modal Delivery</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <select class="form-control" id="exampleFormControlSelect2">
-                                  <option>Select Doctors</option>
-                                  <option>Software Design</option>
-                                  <option>Development cycle</option>
-                                  <option>Software Development</option>
-                                  <option>Maintenance</option>
-                                  <option>Process Query</option>
-                                  <option>Cost and Duration</option>
-                                  <option>Modal Delivery</option>
-                                </select>
-                            </div>
-                        </div>
-
-                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="time" id="time" type="text" class="form-control" placeholder="Time">
-                            </div>
-                        </div>
-                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="name" id="name" type="text" class="form-control" placeholder="Full Name">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="phone" id="phone" type="Number" class="form-control" placeholder="Phone Number">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group-2 mb-4">
-                        <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
-                    </div>
-
-                    <a class="btn btn-main btn-round-full" href="confirmation.html">Simpan<i class="icofont-simple-right ml-2"></i></a>
-                </form>
-            </div>
+            <form action="{{route('pelanggan.store')}}" method="post">
+              @csrf
+              <div class="row">
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="">Masukan NIK</label>
+                          <input type="text" name="nik" class="form-control @error('nik') is-invalid @enderror">
+                          @error('nik')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="">Masukan Nama Pelanggan</label>
+                          <input type="text" name="nama_pelanggan" class="form-control @error('nama_pelanggan') is-invalid @enderror">
+                          @error('nama_pelanggan')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <div class="form-group">
+                          <label>Jenis Kelamin</label>
+                          <select name="jenis_kelamin" class="form-control">
+                              <option value="Laki-Laki">Laki-Laki</option>
+                              <option value="Perempuan">Perempuan</option>
+                          </select>
+                          @error('jenis_kelamin')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="">Masukan Alamat Lengkap</label>
+                          <textarea type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror"></textarea>
+                          @error('alamat')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="">Masukan Nomor Telepon</label>
+                          <input type="text" name="nomor_hp" class="form-control @error('nomor_hp') is-invalid @enderror">
+                          @error('nomor_hp')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="">Masukan Email</label>
+                          <input type="text" name="email" class="form-control @error('email') is-invalid @enderror">
+                          @error('email')
+                              <span class="invalid-feedback" role="alert"></span>
+                              <strong>{{ $message }}</strong>
+                          @enderror
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <button type="reset" class="btn btn-outline-warning">Reset</button>
+                  <button type="submit" class="btn btn-outline-info">Simpan</button>
+              </div>
+            </form>
         </div>
       </div>
     </div>
