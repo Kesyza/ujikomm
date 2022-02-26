@@ -51,7 +51,7 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Beranda</a>
+				<a class="nav-link" href="index">Beranda</a>
 			  </li>
 			    <li class="nav-item"><a class="nav-link" href="tentang">Tentang</a></li>
                 <li class="nav-item dropdown">
@@ -83,9 +83,9 @@
 					<span class="text-uppercase text-sm letter-spacing ">Selamat datang di website sewa mobil k.15.a</span>
 					<h1 class="mb-3 mt-3">Silahkan menyewa</h1>
 					
-					<p class="mb-4 pr-5">Jika ingin menyewa mobil klik ikon sewa, jikalau masih bingung bisa di lihat terlebih dahulu di "Lihat Mobil".</p>
+					<p class="mb-4 pr-5">Jika ingin menyewa mobil klik "Sewa Online", jikalau masih bingung bisa di lihat terlebih dahulu di "Lihat Mobil".</p>
 					<div class="btn-container ">
-						<a href="sewa" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Sewa disini <i class="icofont-simple-right ml-2  "></i></a>
+						<a href="lihat" class="btn btn-main-2 btn-icon btn-round-full">Lihat Mobil <i class="icofont-simple-right ml-2  "></i></a>
 					</div>
 				</div>
 			</div>
