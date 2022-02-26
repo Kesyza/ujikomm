@@ -18,8 +18,12 @@ use App\Http\Controllers\TransaksiController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('user.index');
+// });
+
 Route::get('/', function () {
-    return view('user.index');
+    return view('auth.login');
 });
 
 Auth::routes();
