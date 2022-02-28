@@ -25,15 +25,15 @@
                             <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nota</th>
+                                {{-- <th>Nota</th> --}}
                                 <th>Tanggal Sewa</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Nama Pelanggan</th>
                                 <th>Nama Mobil</th>
                                 <th>Nama Sopir</th>
-                                <th>Total Bayar</th>
+                                {{-- <th>Total Bayar</th> --}}
                                 <th>Status Sewa</th>
-                                <th>Tanggal Dikembalikan</th>
+                                {{-- <th>Tanggal Dikembalikan</th> --}}
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -44,20 +44,21 @@
                             @foreach ($transaksi as $data)
                                 <tr>
                                     <td>{{$no++}}</td>
-                                    <td>{{$data->nota}}</td>
+                                    {{-- <td>{{$data->nota}}</td> --}}
                                     <td>{{$data->tanggal_sewa}}</td>
                                     <td>{{$data->tanggal_kembali}}</td>
                                     <td>{{$data->pelanggan->nama_pelanggan}}</td>
                                     <td>{{$data->mobil->nama_mobil}}</td>
                                     <td>{{$data->sopir->nama_sopir}}</td>
-                                    <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td>
+                                    {{-- <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td> --}}
                                     <td>{{$data->status_sewa}}</td>
-                                    <td>{{$data->tanggal_dikembalikan}}</td>
+                                    {{-- <td>{{$data->tanggal_dikembalikan}}</td> --}}
                                     <td>
                                         <form action="{{route('transaksi.destroy',$data->id)}}" method="post">
                                         @method('delete')
                                         @csrf
-                                        <a href="#" class="btn btn-outline-info" data-toggle="tooltip" title="Selesai Sewa"><i class="fa fa-check"></i></a>
+                                        {{-- <a href="#" class="btn btn-outline-info" data-toggle="tooltip" title="Selesai Sewa"><i class="fa fa-check"></i></a> --}}
+                                        <a href="{{route('transaksi.edit',$data->id)}}" class="btn btn-outline-info" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip" title="Hapus"><i class="fas fa-window-close">
                                         </form>
                                     </td>

@@ -119,7 +119,7 @@ Tambah Data Transaksi
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="">Masukan Tanggal Dikembalikan</label>
@@ -130,7 +130,7 @@ Tambah Data Transaksi
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             {{-- <button type="reset" class="btn btn-outline-warning">Batal</button> --}}
                             <a class="btn btn-outline-warning" href="{{route('transaksi.index')}}">Reset</a>
