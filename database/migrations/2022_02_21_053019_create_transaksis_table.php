@@ -33,7 +33,7 @@ class CreateTransaksisTable extends Migration
             $table->string('nota');
             $table->date('tanggal_sewa');
             $table->date('tanggal_kembali');
-            // $table->date('tanggal_dikembalikan');
+            $table->date('tanggal_dikembalikan');
             $table->integer('total_bayar');
             $table->string('status_sewa');
             $table->timestamps();

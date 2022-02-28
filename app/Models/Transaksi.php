@@ -10,8 +10,8 @@ class Transaksi extends Model
 {
     use HasFactory;
 
-    protected $visible = ['id_pelanggan', 'id_mobil', 'id_sopir', 'tanggal_sewa', 'tanggal_kembali', 'total_bayar', 'status_sewa'];
-    protected $fillable = ['id_pelanggan', 'id_mobil', 'id_sopir', 'tanggal_sewa', 'tanggal_kembali', 'total_bayar', 'status_sewa'];
+    protected $visible = ['id_pelanggan', 'id_mobil', 'id_sopir', 'tanggal_sewa', 'tanggal_kembali', 'total_bayar', 'status_sewa', 'tanggal_dikembalikan'];
+    protected $fillable = ['id_pelanggan', 'id_mobil', 'id_sopir', 'tanggal_sewa', 'tanggal_kembali', 'total_bayar', 'status_sewa', 'tanggal_dikembalikan'];
     public $timestamps = true;
 
     public function pelanggan()

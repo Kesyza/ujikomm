@@ -57,6 +57,7 @@ class TransaksiController extends Controller
             'tanggal_sewa' => 'required',
             'tanggal_kembali' => 'required',
             'status_sewa' => 'required',
+            'tanggal_dikembalikan' => 'required',
         ]);
 
         $transaksi = new Transaksi;
@@ -68,8 +69,11 @@ class TransaksiController extends Controller
         $transaksi->tanggal_kembali = $request->tanggal_kembali;
         $price = Mobil::findOrFail($request->id_mobil);
         $uang = Sopir::findOrFail($request->id_sopir);
-        $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif;
+        // $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif;
         $transaksi->status_sewa = $request->status_sewa;
+        $transaksi->tanggal_dikembalikan = $request->tanggal_dikembalikan;
+        $pinalty = Mobil::findOrFail($request->id_mobil);
+        $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif + $pinalty->denda;
         $transaksi->save();
         Alert::success('Bagus...', 'Data berhasil ditambah');
         return redirect()->route('transaksi.index');

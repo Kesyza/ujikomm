@@ -25,7 +25,7 @@
                             <thead>
                             <tr>
                                 <th>No</th>
-                                {{-- <th>Nota</th> --}}
+                                <th>Nota</th>
                                 <th>Tanggal Sewa</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Nama Pelanggan</th>
@@ -33,6 +33,7 @@
                                 <th>Nama Sopir</th>
                                 <th>Total Bayar</th>
                                 <th>Status Sewa</th>
+                                <th>Tanggal Dikembalikan</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -43,7 +44,7 @@
                             @foreach ($transaksi as $data)
                                 <tr>
                                     <td>{{$no++}}</td>
-                                    {{-- <td>{{$data->nota}}</td> --}}
+                                    <td>{{$data->nota}}</td>
                                     <td>{{$data->tanggal_sewa}}</td>
                                     <td>{{$data->tanggal_kembali}}</td>
                                     <td>{{$data->pelanggan->nama_pelanggan}}</td>
@@ -51,6 +52,7 @@
                                     <td>{{$data->sopir->nama_sopir}}</td>
                                     <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td>
                                     <td>{{$data->status_sewa}}</td>
+                                    <td>{{$data->tanggal_dikembalikan}}</td>
                                     <td>
                                         <form action="{{route('transaksi.destroy',$data->id)}}" method="post">
                                         @method('delete')
