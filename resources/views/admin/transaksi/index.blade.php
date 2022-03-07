@@ -31,7 +31,7 @@
                                 <th>Nama Pelanggan</th>
                                 <th>Nama Mobil</th>
                                 <th>Nama Sopir</th>
-                                {{-- <th>Total Bayar</th> --}}
+                                {{-- <th>Total Bayar</th>   --}}
                                 <th>Status Sewa</th>
                                 {{-- <th>Tanggal Dikembalikan</th> --}}
                                 <th>Aksi</th>

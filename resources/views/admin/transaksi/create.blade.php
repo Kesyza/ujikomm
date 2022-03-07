@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Tambah Data Transaksi
+<center><h3>TAMBAH DATA TRANSAKSI</h3></center>
 
 @stop
 
@@ -14,7 +14,7 @@ Tambah Data Transaksi
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Transaksi</div>
+                <div class="card-header"><h5>DATA TRANSAKSI</h5></div>
                 <div class="card-body">
                     <form action="{{route('transaksi.store')}}" method="post">
                         @csrf
@@ -119,7 +119,7 @@ Tambah Data Transaksi
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="row">
+                        <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="">Masukan Tanggal Dikembalikan</label>
@@ -129,8 +129,8 @@ Tambah Data Transaksi
                                         <strong>{{ $message }}</strong>
                                     @enderror
                                 </div>
-                            </div>
-                        </div> --}}
+                            </div>  
+                        </div>
                         <div class="form-group">
                             {{-- <button type="reset" class="btn btn-outline-warning">Batal</button> --}}
                             <a class="btn btn-outline-warning" href="{{route('transaksi.index')}}">Reset</a>

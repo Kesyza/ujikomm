@@ -11,7 +11,7 @@
 @section('content')
 
 <div class="container-fluid">
-    {{-- <div class="row">
+    <div class="row">
       <div class="col-lg-3 col-6">
         <div class="small-box bg-info">
           <div class="inner">
@@ -90,7 +90,7 @@
           <a href="admin/transaksi/histori" class="small-box-footer">Selengkapnya...<i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-    </div> --}}
+    </div>
     {{-- <div class="row">
       <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">

@@ -26,8 +26,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nota</th>
+                                <th>Nama Pelanggan</th>
                                 <th>Tanggal Dikembalikan</th>
-                                <td>Total Bayar</td>
+                                <th>Total Bayar</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$data->nota}}</td>
+                                    <td>{{$data->pelanggan->nama_pelanggan}}</td>   
                                     <td>{{$data->tanggal_dikembalikan}}</td>
                                     <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td>
                                     <td>

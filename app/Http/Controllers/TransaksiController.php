@@ -57,23 +57,24 @@ class TransaksiController extends Controller
             'tanggal_sewa' => 'required',
             'tanggal_kembali' => 'required',
             'status_sewa' => 'required',
-            // 'tanggal_dikembalikan' => 'required',
+            'tanggal_dikembalikan' => 'required',
         ]);
 
         $transaksi = new Transaksi;
         $transaksi->id_pelanggan = $request->id_pelanggan;
         $transaksi->id_mobil = $request->id_mobil;
         $transaksi->id_sopir = $request->id_sopir;
-        // $transaksi->nota = mt_rand(1000, 9999);
+        $transaksi->nota = mt_rand(1000, 9999);
         $transaksi->tanggal_sewa = $request->tanggal_sewa;
         $transaksi->tanggal_kembali = $request->tanggal_kembali;
-        // $price = Mobil::findOrFail($request->id_mobil);
-        // $uang = Sopir::findOrFail($request->id_sopir);
+        $price = Mobil::findOrFail($request->id_mobil);
+        $uang = Sopir::findOrFail($request->id_sopir);
         // $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif;
         $transaksi->status_sewa = $request->status_sewa;
-        // $transaksi->tanggal_dikembalikan = $request->tanggal_dikembalikan;
-        // $pinalty = Mobil::findOrFail($request->id_mobil);
-        // $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif + $pinalty->denda;
+        $transaksi->tanggal_dikembalikan = $request->tanggal_dikembalikan;
+        $pinalty = Mobil::findOrFail($request->id_mobil);
+        $pinalty->denda = Carbon::parse($request->tanggal_kembali)->diffInDays($request->tanggal_dikembalikan) * $pinalty->denda;
+        $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif + $pinalty->denda;
         $transaksi->save();
         Alert::success('Bagus...', 'Data berhasil ditambah');
         return redirect()->route('transaksi.index');
@@ -101,10 +102,7 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-        $pelanggan = Pelanggan::all();
-        $mobil = Mobil::all();
-        $sopir = Sopir::all();
-        return view('admin.transaksi.edit', compact('pelanggan', 'mobil', 'sopir'));
+        //
     }
 
     /**
@@ -116,21 +114,7 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'tanggal_dikembalikan' => 'required',
-        ]);
-
-        $transaksi = new Transaksi;
-        $transaksi->nota = mt_rand(1000, 9999);
-        $price = Mobil::findOrFail($request->id_mobil);
-        $uang = Sopir::findOrFail($request->id_sopir);
-        $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif;
-        $transaksi->tanggal_dikembalikan = $request->tanggal_dikembalikan;
-        $pinalty = Mobil::findOrFail($request->id_mobil);
-        $transaksi->total_bayar = Carbon::parse($request->tanggal_sewa)->diffInDays($request->tanggal_kembali) * $price->harga_sewa + $uang->tarif + $pinalty->denda;
-        $transaksi->save();
-        Alert::success('Bagus...', 'Sewa telah selesai');
-        return redirect()->route('transaksi.show');
+        //
     }
 
     /**
