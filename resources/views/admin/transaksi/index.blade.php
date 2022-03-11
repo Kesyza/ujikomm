@@ -50,7 +50,7 @@
                                     <td>{{$data->pelanggan->nama_pelanggan}}</td>
                                     <td>{{$data->mobil->nama_mobil}}</td>
                                     <td>{{$data->sopir->nama_sopir}}</td>
-                                    {{-- <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td> --}}
+                                    <td>Rp. {{ number_format($data->total_bayar, 0, ',', '.') }}</td>
                                     <td>{{$data->status_sewa}}</td>
                                     {{-- <td>{{$data->tanggal_dikembalikan}}</td> --}}
                                     <td>
